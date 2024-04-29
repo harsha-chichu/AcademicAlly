@@ -109,7 +109,7 @@ export async function deleteThread(id: string, path: string): Promise<void> {
     const mainThread = await Thread.findById(id).populate("author community");
 
     if (!mainThread) {
-      throw new Error("Thread not found");
+      throw new Error("Post not found");
     }
 
     // Fetch all child threads and their descendants recursively
@@ -153,7 +153,7 @@ export async function deleteThread(id: string, path: string): Promise<void> {
 
     revalidatePath(path);
   } catch (error: any) {
-    throw new Error(`Failed to delete thread: ${error.message}`);
+    throw new Error(`Failed to delete Post: ${error.message}`);
   }
 }
 
@@ -195,8 +195,8 @@ export async function fetchThreadById(threadId: string) {
 
     return thread;
   } catch (err) {
-    console.error("Error while fetching thread:", err);
-    throw new Error("Unable to fetch thread");
+    console.error("Error while fetching Post:", err);
+    throw new Error("Unable to fetch Post");
   }
 }
 
@@ -213,7 +213,7 @@ export async function addCommentToThread(
     const originalThread = await Thread.findById(threadId);
 
     if (!originalThread) {
-      throw new Error("Thread not found");
+      throw new Error("Post not found");
     }
 
     // Create the new comment thread

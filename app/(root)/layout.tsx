@@ -13,9 +13,13 @@ import Topbar from "@/components/shared/Topbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Threads",
-  description: "A Next.js 13 Meta Threads application",
+  title: "AcademicAlly",
+  description: "An innovative online platform exclusively designed for college students, seamlessly merging social and professional networking.",
 };
+// export const metadata: Metadata = {
+//   title: "AcademicAlly",
+//   description: "An innovative online platform exclusively designed for college students, seamlessly merging social and professional networking.",
+// };
 
 export default function RootLayout({
   children,
